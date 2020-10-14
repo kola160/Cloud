@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+        <script
+            src="https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script
+            src="https://www.gstatic.com/firebasejs/7.22.1/firebase-analytics.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <title>Cloud Cafe</title>
+    </head>
+    <body>
+
+        <h1>Cloud Cafe</h1>
+        <div class="content">
+            <form id="add-cafe-form">
+                <input type="text" name="name" placeholder="Cafe name">
+                <input type="text" name="city" placeholder="Cafe City">
+                <button> Add Cafe </button>
+            </form>
+            <ul id="cafe-list"></ul>
+        </div>
+
+
+        <!-- This Script for conntion with databeas -->
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+              apiKey: "AIzaSyC2JS5cR--X2HfmCS2lxw5s1CC3VBYSN28",
+              authDomain: "test-api-73bfe.firebaseapp.com",
+              databaseURL: "https://test-api-73bfe.firebaseio.com",
+              projectId: "test-api-73bfe",
+              storageBucket: "test-api-73bfe.appspot.com",
+              messagingSenderId: "180323789565",
+              appId: "1:180323789565:web:f7493a4d702ae8bac26c94",
+              measurementId: "G-X3T53FPMJR"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true });
+          </script>
+        <script src="app.js"></script>
+    </body>
+</html>
